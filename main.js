@@ -20,7 +20,9 @@ db.once('open', ()=>console.log('Db Connection established successfully'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
+const unused_var = "I am not used";
 app.use(session({secret: 'my secreat key',saveUninitialized:true,resave: false}));
+console.log("Session started with secret: my secreat key"); // Security issue: logging secrets
 app.use(express.static('uploads'));
 app.use((req, res, next)=>{
     res.locals.message = req.session.message; 
