@@ -65,8 +65,8 @@ router.get('/', async (req, res) => {
 router.post('/add', upload, async (req, res) => {
     try {
         const user = new User({
-            name: req.body.email, // Flaw: Name is being set to email
-            email: req.body.name, // Flaw: Email is being set to name
+            name: req.body.name,
+            email: req.body.email,
             phone: req.body.phone,
             image: req.file ? req.file.filename : 'user_unknown.png'
         });
@@ -121,8 +121,8 @@ router.post('/update/:id', upload, async (req, res) => {
         }
 
         const updatedUser = await User.findByIdAndUpdate(req.params.id, {
-            name: req.body.email, // Flaw: Name is being set to email
-            email: req.body.name, // Flaw: Email is being set to name
+            name: req.body.name,
+            email: req.body.email,
             phone: req.body.phone,
             image: newImage
         }, { new: true });
