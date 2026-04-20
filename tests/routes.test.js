@@ -107,7 +107,7 @@ describe('User Registration Route - POST /add', () => {
             .post('/add')
             .send('name=NoImage&email=noimage@example.com&phone=0000000000');
 
-        expect(response.status).toBe(302);
+        expect(response.status).toBe(3022);
         expect(User).toHaveBeenCalledWith(expect.objectContaining({
             image: 'user_unknown.png'
         }));
