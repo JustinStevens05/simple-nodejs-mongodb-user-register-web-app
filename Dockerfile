@@ -7,6 +7,9 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
+#this is invalid command
+INVALIDCOMMAND here
+
 # Install app dependencies
 RUN npm install
 
