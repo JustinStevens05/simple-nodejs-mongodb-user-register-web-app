@@ -18,7 +18,7 @@ jobs:
           pr_number: ${{ github.event.number }}
           ai_provider: 'google'
           google_api_key: ${{ secrets.GOOGLE_API_KEY }}
-          google_model: 'gemini-1.5-flash'
+          #google_model: 'gemini-1.5-flash'
   run-tests:
     runs-on: ubuntu-latest
     needs: ai-code-review # Runs only after code review succeeds
